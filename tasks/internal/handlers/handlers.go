@@ -56,7 +56,7 @@ func (h *Handlers) DeleteTask(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Задача не была удалена", http.StatusInternalServerError)
 		return
 	}
-	w.WriteHeader(http.StatusNoContent)
+	writeJSON(w, http.StatusOK, "Задача успешно удалена")
 }
 
 func (h *Handlers) PostTask(w http.ResponseWriter, r *http.Request) {
