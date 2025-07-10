@@ -26,7 +26,7 @@ func NewHandler(a Service) *Handlers {
 func writeJSON(w http.ResponseWriter, statusCode int, v interface{}) {
 	w.Header().Set("Content-type", "application/json")
 	w.WriteHeader(statusCode)
-	_ = json.NewEncoder(w).Encode(v)
+	json.NewEncoder(w).Encode(v)
 }
 
 func (h *Handlers) GetTask(w http.ResponseWriter, r *http.Request) {
